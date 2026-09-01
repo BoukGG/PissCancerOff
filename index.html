@@ -172,21 +172,6 @@
     </div>
   </section>
 
-  <!-- ═══════════ WHERE I'M RUNNING NEXT ═══════════ -->
-  <section class="route" id="route">
-    <div class="wrap">
-      <h2 class="section-title">Where I'm running next.</h2>
-      <p class="section-sub">
-        The long runs happen where the people are — on purpose. Tailgate lots,
-        greenways, downtown, the occasional race that isn't mine. Here's where
-        to find the shirt next. Come say hi; I'll be the one still moving at mile 20.
-      </p>
-      <ol class="route-list" id="route-list">
-        <!-- rows rendered from data.js -->
-      </ol>
-    </div>
-  </section>
-
   <!-- ═══════════ TRAINING ═══════════ -->
   <section class="training" id="training">
     <div class="wrap">
@@ -299,21 +284,6 @@
       pledgeBtn.removeAttribute("href");
       pledgeBtn.setAttribute("aria-disabled", "true");
     }
-
-    /* ----- where-I'm-running-next rows ----- */
-    var list = document.getElementById("route-list");
-    d.route.forEach(function (r) {
-      var li = document.createElement("li");
-      li.className = "route-row route-" + r.status;
-      li.innerHTML =
-        '<span class="route-marker" aria-hidden="true"></span>' +
-        '<span class="route-place">' + r.place +
-          '<span class="route-detail">' + r.detail + "</span></span>" +
-        '<span class="route-date">' + r.date + "</span>" +
-        (r.status === "next" ? '<span class="route-badge">Next run</span>' :
-         r.status === "done" ? '<span class="route-badge done">Done ✓</span>' : "");
-      list.appendChild(li);
-    });
 
     /* ----- footer links (only the ones that exist) ----- */
     var foot = document.getElementById("foot-links");

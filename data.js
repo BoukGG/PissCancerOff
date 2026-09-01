@@ -38,43 +38,4 @@ const SITE_DATA = {
     instagram: "",    // e.g. "https://www.instagram.com/XXXX"
     email: "",        // the address you want public, e.g. "run@pisscanceroff.com"
   },
-
-  /* ---------- WHERE I'M RUNNING NEXT ----------
-     Any place works: a tailgate lot, a greenway, downtown, someone else's
-     race. Add/remove rows freely.
-     status: "next" = highlighted as the next run (use on exactly one row)
-             "upcoming" = planned
-             "done" = completed (gets checked off) */
-  route: [
-    {
-      place: "Carter-Finley Stadium lots",
-      detail: "Raleigh, NC · game-day tailgates",
-      date: "TBD",
-      status: "next",
-    },
-    {
-      place: "Kenan Stadium tailgates",
-      detail: "Chapel Hill, NC",
-      date: "TBD",
-      status: "upcoming",
-    },
-    {
-      place: "Wallace Wade Stadium lots",
-      detail: "Durham, NC",
-      date: "TBD",
-      status: "upcoming",
-    },
-    {
-      place: "Memorial Stadium tailgates",
-      detail: "Clemson, SC",
-      date: "TBD",
-      status: "upcoming",
-    },
-    {
-      place: "Scott Stadium lots",
-      detail: "Charlottesville, VA",
-      date: "TBD",
-      status: "upcoming",
-    },
-  ],
 };
