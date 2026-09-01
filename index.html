@@ -9,7 +9,7 @@
   <meta property="og:description" content="100 miles. 24 hours. One fight. Running the Southern Tour Ultra for my uncle — and raising money to fight bladder cancer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pisscanceroff.com">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23FF4E00'/%3E%3Ctext x='32' y='44' font-family='Arial Black,sans-serif' font-size='28' font-weight='900' fill='%23FCF7EC' text-anchor='middle'%3E100%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232251CC'/%3E%3Ctext x='32' y='44' font-family='Arial Black,sans-serif' font-size='28' font-weight='900' fill='%23FFC20E' text-anchor='middle'%3E100%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +51,9 @@
           <a class="btn btn-ghost" href="#why">Why I'm running&nbsp;&darr;</a>
         </div>
         <p class="hero-foot">
-          Every Saturday this fall I'm logging long-run miles through the
-          tailgate lots of ACC game days — Raleigh to Chapel Hill to Durham
-          and beyond. If I ran past you, this is what it's about.
+          Every weekend this fall I'm logging long-run miles out in public on
+          purpose — tailgate lots, greenways, downtown streets, other people's
+          races. If I ran past you, this is what it's about.
         </p>
       </div>
 
@@ -172,16 +172,16 @@
     </div>
   </section>
 
-  <!-- ═══════════ THE TOUR ═══════════ -->
-  <section class="tour" id="tour">
+  <!-- ═══════════ WHERE I'M RUNNING NEXT ═══════════ -->
+  <section class="route" id="route">
     <div class="wrap">
-      <h2 class="section-title">The game day tour.</h2>
+      <h2 class="section-title">Where I'm running next.</h2>
       <p class="section-sub">
-        Long runs don't take Saturdays off, and neither does college football.
-        So the training route goes where the people are: through the tailgate
-        lots on game day. Come say hi — I'll be the one still running at mile 20.
+        The long runs happen where the people are — on purpose. Tailgate lots,
+        greenways, downtown, the occasional race that isn't mine. Here's where
+        to find the shirt next. Come say hi; I'll be the one still moving at mile 20.
       </p>
-      <ol class="tour-list" id="tour-list">
+      <ol class="route-list" id="route-list">
         <!-- rows rendered from data.js -->
       </ol>
     </div>
@@ -300,20 +300,18 @@
       pledgeBtn.setAttribute("aria-disabled", "true");
     }
 
-    /* ----- tour rows ----- */
-    var list = document.getElementById("tour-list");
-    d.tour.forEach(function (t) {
+    /* ----- where-I'm-running-next rows ----- */
+    var list = document.getElementById("route-list");
+    d.route.forEach(function (r) {
       var li = document.createElement("li");
-      li.className = "tour-row tour-" + t.status;
-      li.style.setProperty("--c1", t.colors[0]);
-      li.style.setProperty("--c2", t.colors[1]);
+      li.className = "route-row route-" + r.status;
       li.innerHTML =
-        '<span class="tour-swatch" aria-hidden="true"></span>' +
-        '<span class="tour-school">' + t.school + "</span>" +
-        '<span class="tour-venue">' + t.venue + " · " + t.city + "</span>" +
-        '<span class="tour-date">' + t.date + "</span>" +
-        (t.status === "next" ? '<span class="tour-badge">Next run</span>' :
-         t.status === "done" ? '<span class="tour-badge done">Done ✓</span>' : "");
+        '<span class="route-marker" aria-hidden="true"></span>' +
+        '<span class="route-place">' + r.place +
+          '<span class="route-detail">' + r.detail + "</span></span>" +
+        '<span class="route-date">' + r.date + "</span>" +
+        (r.status === "next" ? '<span class="route-badge">Next run</span>' :
+         r.status === "done" ? '<span class="route-badge done">Done ✓</span>' : "");
       list.appendChild(li);
     });
 

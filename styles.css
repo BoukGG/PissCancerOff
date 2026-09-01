@@ -1,20 +1,28 @@
 /* =============================================================
    PISS CANCER OFF — visual identity
    Direction: vintage race-bib / athletic-department print,
-   executed clean and modern with one loud accent.
-   Palette: warm paper, near-black ink, safety orange.
+   executed clean and modern.
+   Palette: the bladder cancer awareness ribbon — marigold,
+   blue, purple — on warm paper. The deep purple doubles as
+   the "ink" for text, rules and dark sections.
    One deliberate look — built to read in full sun on a phone
-   in a tailgate lot. No dark mode by design.
+   in a parking lot. No dark mode by design.
    ============================================================= */
 
 :root {
-  --paper: #F6F1E6;
-  --paper-deep: #EFE7D6;
-  --ink: #191510;
-  --ink-soft: #4b443a;
-  --accent: #FF4E00;
-  --accent-ink: #d63c00;
-  --rule: #191510;
+  --paper: #FAF5E8;
+  --paper-deep: #F2EAD6;
+  --card: #FFFBF0;
+
+  --marigold: #FFC20E;       /* ribbon yellow — the loud accent */
+  --marigold-deep: #E0A800;
+  --blue: #2251CC;           /* ribbon blue */
+  --blue-deep: #1A3FA6;
+  --purple: #5B2D8E;         /* ribbon purple */
+  --ink: #23173F;            /* deepest purple — reads as black */
+  --ink-soft: #524a66;
+  --muted-on-dark: #c3b9d6;
+
   --font-display: "Anton", "Arial Black", sans-serif;
   --font-cond: "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: "Spectral", Georgia, serif;
@@ -37,7 +45,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   /* faint paper grain */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.14 0 0 0 0 0.09 0 0 0 0 0.25 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -48,10 +56,10 @@ strong { font-weight: 600; }
 /* ═══════════ ticker ═══════════ */
 
 .ticker {
-  background: var(--ink);
+  background: var(--purple);
   color: var(--paper);
   overflow: hidden;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 4px solid var(--marigold);
   white-space: nowrap;
 }
 .ticker-track {
@@ -86,7 +94,7 @@ strong { font-weight: 600; }
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 0.85rem;
-  color: var(--accent-ink);
+  color: var(--blue);
   margin-bottom: 18px;
 }
 
@@ -98,13 +106,17 @@ strong { font-weight: 600; }
   letter-spacing: 0.01em;
 }
 .wordmark span { display: block; }
-.mark-accent { color: var(--accent); }
-.period { color: var(--ink); }
+.mark-accent { color: var(--blue); }
+.period { color: var(--marigold); }
 
 .oneliner {
   margin: 26px 0 30px;
   font-size: 1.22rem;
   max-width: 34em;
+}
+.oneliner strong {
+  background: linear-gradient(transparent 55%, var(--marigold) 55%);
+  padding: 0 2px;
 }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
@@ -122,9 +134,8 @@ strong { font-weight: 600; }
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 .btn-primary {
-  background: var(--accent);
-  color: var(--paper);
-  border-color: var(--ink);
+  background: var(--marigold);
+  color: var(--ink);
   box-shadow: 5px 5px 0 var(--ink);
 }
 .btn-primary:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
@@ -145,7 +156,7 @@ strong { font-weight: 600; }
 /* ----- the bib ----- */
 
 .bib {
-  background: #FCF8EF;
+  background: var(--card);
   border: 3px solid var(--ink);
   box-shadow: 8px 8px 0 var(--ink);
   padding: 20px 22px 16px;
@@ -169,12 +180,13 @@ strong { font-weight: 600; }
   border-top: 3px solid var(--ink);
   border-bottom: 3px solid var(--ink);
   padding: 6px 0;
+  background: var(--marigold);
 }
 .bib-number {
   font-family: var(--font-display);
   font-size: clamp(6rem, 14vw, 9rem);
   line-height: 1;
-  color: var(--accent);
+  color: var(--blue);
   padding-top: 8px;
 }
 .bib-sub {
@@ -184,6 +196,7 @@ strong { font-weight: 600; }
   letter-spacing: 0.5em;
   font-size: 1rem;
   margin: -6px 0 10px 0.5em;
+  color: var(--purple);
 }
 .bib-foot {
   display: flex;
@@ -203,8 +216,8 @@ strong { font-weight: 600; }
   background: var(--ink);
   color: var(--paper);
   padding: 58px 0 30px;
-  border-top: 3px solid var(--accent);
-  border-bottom: 3px solid var(--accent);
+  border-top: 4px solid var(--marigold);
+  border-bottom: 4px solid var(--marigold);
 }
 
 .num-grid {
@@ -219,7 +232,7 @@ strong { font-weight: 600; }
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--marigold);
   margin-bottom: 8px;
 }
 
@@ -229,7 +242,6 @@ strong { font-weight: 600; }
   line-height: 1.05;
   font-variant-numeric: tabular-nums;
 }
-.num-steps { color: var(--paper); }
 .countdown em {
   font-style: normal;
   font-family: var(--font-cond);
@@ -237,13 +249,14 @@ strong { font-weight: 600; }
   vertical-align: 0.35em;
   letter-spacing: 0.05em;
   margin-right: 0.35em;
+  color: var(--muted-on-dark);
 }
 
 .num-sub {
   font-family: var(--font-cond);
   font-weight: 500;
   font-size: 0.98rem;
-  color: #b9b0a2;
+  color: var(--muted-on-dark);
   margin-top: 6px;
   letter-spacing: 0.03em;
 }
@@ -259,19 +272,19 @@ strong { font-weight: 600; }
 .thermo-fill {
   height: 100%;
   width: 0;
-  background: var(--accent);
+  background: var(--marigold);
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .updated {
   margin-top: 34px;
   padding-top: 14px;
-  border-top: 1px solid #3d372e;
+  border-top: 1px solid #443a60;
   font-family: var(--font-cond);
   font-weight: 500;
   letter-spacing: 0.06em;
   font-size: 0.92rem;
-  color: #b9b0a2;
+  color: var(--muted-on-dark);
 }
 
 /* ═══════════ shared section bits ═══════════ */
@@ -304,7 +317,7 @@ section { padding: 76px 0; }
 }
 .pledge-step {
   border: 3px solid var(--ink);
-  background: #FCF8EF;
+  background: var(--card);
   padding: 22px;
   box-shadow: 6px 6px 0 var(--ink);
 }
@@ -313,13 +326,16 @@ section { padding: 76px 0; }
   font-family: var(--font-display);
   font-size: 1.6rem;
   color: var(--paper);
-  background: var(--accent);
+  background: var(--blue);
   border: 3px solid var(--ink);
   width: 46px; height: 46px;
   text-align: center;
   line-height: 42px;
   margin-bottom: 14px;
 }
+/* the three steps walk the ribbon: blue → purple → marigold */
+.pledge-step:nth-child(2) .pledge-n { background: var(--purple); }
+.pledge-step:nth-child(3) .pledge-n { background: var(--marigold); color: var(--ink); }
 
 .pledge-cta { text-align: center; }
 .soon-note {
@@ -342,8 +358,8 @@ section { padding: 76px 0; }
 
 .photo-slot {
   border: 3px solid var(--ink);
-  background: #FCF8EF;
-  box-shadow: 8px 8px 0 var(--ink);
+  background: var(--card);
+  box-shadow: 8px 8px 0 var(--purple);
   transform: rotate(-1.5deg);
   aspect-ratio: 4 / 5;
   display: flex;
@@ -361,7 +377,7 @@ section { padding: 76px 0; }
 .why-photo img {
   width: 100%;
   border: 3px solid var(--ink);
-  box-shadow: 8px 8px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--purple);
   transform: rotate(-1.5deg);
   display: block;
 }
@@ -369,63 +385,75 @@ section { padding: 76px 0; }
 .why-copy p { margin-bottom: 18px; max-width: 40em; }
 .lede { font-size: 1.22rem; font-weight: 600; }
 .where-money {
-  border-left: 5px solid var(--accent);
+  border-left: 6px solid var(--blue);
   padding: 12px 16px;
-  background: #FCF8EF;
+  background: var(--card);
   font-size: 0.99rem;
 }
 
-/* ═══════════ tour ═══════════ */
+/* ═══════════ route (where I'm running next) ═══════════ */
 
-.tour-list { list-style: none; border-top: 3px solid var(--ink); }
+.route-list { list-style: none; border-top: 3px solid var(--ink); counter-reset: stop; }
 
-.tour-row {
+.route-row {
   display: grid;
-  grid-template-columns: 18px 150px 1fr auto auto;
+  grid-template-columns: 44px 1fr auto auto;
   gap: 18px;
   align-items: center;
   padding: 16px 4px;
   border-bottom: 3px solid var(--ink);
+  counter-increment: stop;
 }
-.tour-swatch {
-  width: 18px; height: 42px;
-  background: linear-gradient(to bottom, var(--c1) 0 50%, var(--c2) 50% 100%);
-  border: 2px solid var(--ink);
+.route-marker {
+  width: 44px; height: 44px;
+  border: 3px solid var(--ink);
+  background: var(--purple);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
 }
-.tour-school {
+.route-marker::before { content: counter(stop); }
+.route-next .route-marker { background: var(--marigold); color: var(--ink); }
+.route-done .route-marker { background: var(--paper-deep); color: var(--ink-soft); }
+.route-place {
   font-family: var(--font-display);
   font-size: 1.35rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  line-height: 1.1;
 }
-.tour-venue {
+.route-detail {
+  display: block;
   font-family: var(--font-cond);
   font-weight: 500;
   font-size: 1.02rem;
   color: var(--ink-soft);
   letter-spacing: 0.03em;
+  text-transform: none;
 }
-.tour-date {
+.route-date {
   font-family: var(--font-cond);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.95rem;
+  color: var(--blue);
 }
-.tour-badge {
+.route-badge {
   font-family: var(--font-cond);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.82rem;
-  background: var(--accent);
-  color: var(--paper);
+  background: var(--marigold);
+  color: var(--ink);
   border: 2.5px solid var(--ink);
   padding: 4px 10px;
 }
-.tour-badge.done { background: var(--ink); }
-.tour-done { opacity: 0.55; }
-.tour-next { background: #FCF8EF; }
+.route-badge.done { background: var(--purple); color: var(--paper); }
+.route-done { opacity: 0.6; }
+.route-next { background: var(--card); }
 
 /* ═══════════ training ═══════════ */
 
@@ -434,9 +462,9 @@ section { padding: 76px 0; }
 /* ═══════════ footer ═══════════ */
 
 .foot {
-  background: var(--ink);
+  background: var(--purple);
   color: var(--paper);
-  border-top: 3px solid var(--accent);
+  border-top: 4px solid var(--marigold);
   padding: 44px 0 52px;
 }
 .foot-grid {
@@ -450,12 +478,12 @@ section { padding: 76px 0; }
   font-size: 1.6rem;
   text-transform: uppercase;
 }
-.foot-mark .period { color: var(--accent); }
+.foot-mark .period { color: var(--marigold); }
 .foot-line {
   font-family: var(--font-cond);
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #b9b0a2;
+  color: var(--muted-on-dark);
   margin-top: 6px;
 }
 .foot-links { display: flex; flex-direction: column; gap: 8px; }
@@ -467,17 +495,17 @@ section { padding: 76px 0; }
   font-size: 0.95rem;
   color: var(--paper);
   text-decoration: none;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--marigold);
   align-self: flex-start;
   padding-bottom: 2px;
 }
-.foot-links a:hover { color: var(--accent); }
+.foot-links a:hover { color: var(--marigold); }
 .foot-meta {
   font-family: var(--font-cond);
   font-weight: 500;
   font-size: 0.92rem;
   letter-spacing: 0.05em;
-  color: #b9b0a2;
+  color: var(--muted-on-dark);
 }
 .foot-meta p { margin-bottom: 4px; }
 
@@ -492,12 +520,11 @@ section { padding: 76px 0; }
   .why-grid { grid-template-columns: 1fr; gap: 40px; }
   .why-photo { max-width: 340px; }
   .foot-grid { grid-template-columns: 1fr; }
-  .tour-row { grid-template-columns: 14px 1fr auto; grid-auto-rows: auto; gap: 4px 16px; }
-  .tour-swatch { grid-column: 1; grid-row: 1 / 4; height: 100%; }
-  .tour-school { grid-column: 2; grid-row: 1; }
-  .tour-badge { grid-column: 3; grid-row: 1; justify-self: end; align-self: center; }
-  .tour-venue { grid-column: 2 / 4; grid-row: 2; }
-  .tour-date { grid-column: 2 / 4; grid-row: 3; }
+  .route-row { grid-template-columns: 44px 1fr auto; grid-auto-rows: auto; gap: 6px 16px; }
+  .route-marker { grid-column: 1; grid-row: 1 / 3; align-self: start; }
+  .route-place { grid-column: 2; grid-row: 1; }
+  .route-badge { grid-column: 3; grid-row: 1; justify-self: end; align-self: center; }
+  .route-date { grid-column: 2 / 4; grid-row: 2; }
 }
 
 @media (max-width: 480px) {

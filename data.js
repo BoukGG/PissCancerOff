@@ -39,50 +39,41 @@ const SITE_DATA = {
     email: "",        // the address you want public, e.g. "run@pisscanceroff.com"
   },
 
-  /* ---------- THE GAME DAY TOUR ----------
+  /* ---------- WHERE I'M RUNNING NEXT ----------
+     Any place works: a tailgate lot, a greenway, downtown, someone else's
+     race. Add/remove rows freely.
      status: "next" = highlighted as the next run (use on exactly one row)
-             "upcoming" = scheduled/planned
-             "done" = completed (gets checked off)
-     Edit dates as the CFB schedule firms up. */
-  tour: [
+             "upcoming" = planned
+             "done" = completed (gets checked off) */
+  route: [
     {
-      school: "NC State",
-      venue: "Carter-Finley Stadium lots",
-      city: "Raleigh, NC",
+      place: "Carter-Finley Stadium lots",
+      detail: "Raleigh, NC · game-day tailgates",
       date: "TBD",
-      colors: ["#CC0000", "#231F20"],
       status: "next",
     },
     {
-      school: "UNC",
-      venue: "Kenan Stadium tailgates",
-      city: "Chapel Hill, NC",
+      place: "Kenan Stadium tailgates",
+      detail: "Chapel Hill, NC",
       date: "TBD",
-      colors: ["#7BAFD4", "#13294B"],
       status: "upcoming",
     },
     {
-      school: "Duke",
-      venue: "Wallace Wade Stadium lots",
-      city: "Durham, NC",
+      place: "Wallace Wade Stadium lots",
+      detail: "Durham, NC",
       date: "TBD",
-      colors: ["#012169", "#FFFFFF"],
       status: "upcoming",
     },
     {
-      school: "Clemson",
-      venue: "Memorial Stadium tailgates",
-      city: "Clemson, SC",
+      place: "Memorial Stadium tailgates",
+      detail: "Clemson, SC",
       date: "TBD",
-      colors: ["#F56600", "#522D80"],
       status: "upcoming",
     },
     {
-      school: "Virginia",
-      venue: "Scott Stadium lots",
-      city: "Charlottesville, VA",
+      place: "Scott Stadium lots",
+      detail: "Charlottesville, VA",
       date: "TBD",
-      colors: ["#232D4B", "#E57200"],
       status: "upcoming",
     },
   ],

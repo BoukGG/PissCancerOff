@@ -14,7 +14,7 @@ Every number on the site lives in **`data.js`**. To update after a run:
 
 Or just tell Claude the new numbers in a Claude Code session and let it commit/push.
 
-`data.js` also controls the donate links, social links, contact email, race countdown, and the game-day tour list (set exactly one tour row to `status: "next"`; mark finished ones `"done"`).
+`data.js` also controls the donate links, social links, contact email, race countdown, and the "where I'm running next" list (set exactly one `route` row to `status: "next"`; mark finished ones `"done"`).
 
 ## One-time deployment setup
 
@@ -39,5 +39,5 @@ Free option that pairs with the Cloudflare account you'll already have:
 - **Optional direct family fund** (`links.family`).
 - **Photos** — drop images in an `img/` folder and swap the placeholder in the "The why" section of `index.html`.
 - **Contact email + Strava/Instagram** (`links.*`).
-- **Tour dates** — replace the `TBD`s as game-day plans firm up.
+- **Run dates/places** — replace the `TBD`s in `route` as weekend plans firm up.
 - **Training plan section** — will be generated from the "ultra console" `.jsx` training plan.
